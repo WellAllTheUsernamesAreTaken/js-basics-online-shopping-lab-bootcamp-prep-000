@@ -11,7 +11,11 @@ function setCart(c) {
 
 function addToCart(item) {
  // write your code here
+<<<<<<< HEAD
  var price = Math.floor(Math.random() * 100);
+=======
+ var price = Math.floor(Math.random(1, 99) * 20);
+>>>>>>> d8c4c882ccc9dd9590e200df34441b5e525930f5
  if (cart.length === 0) {
    cart[0] = Object.assign({}, cart, { ["itemName"]: item}, { ["itemPrice"]: price});
  } else {
@@ -27,6 +31,7 @@ function viewCart() {
     for (var i = 0; cart.length > i; i++) {
       if (i === 0) {
         msg += `In your cart, you have ${cart[i].itemName} at ${"$" + cart[i].itemPrice}`;
+<<<<<<< HEAD
       } else if (cart.length - 1 === i) {
         msg += `, and ${cart[i].itemName} at ${"$" + cart[i].itemPrice}`;
       } else {
@@ -35,6 +40,14 @@ function viewCart() {
       }
     }
     msg += ".";
+=======
+      } else if (i != cart.length) {
+        msg += `, ${cart[i].itemName} at ${cart[i].itemPrice}`;
+      } else {
+        msg += `, ${cart[i].itemName} at ${cart[i].itemPrice}.`;
+      }
+    }
+>>>>>>> d8c4c882ccc9dd9590e200df34441b5e525930f5
     return msg;
   } else {
     return "Your shopping cart is empty.";
